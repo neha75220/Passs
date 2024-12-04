@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender
+
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- /////////////////////////////////////////////////// -->
+    <div class="hero">
+        <div class="calender">
+            <div class="left"><p id="date">01</p>
+            <p id="day">Sunday</p></div>
+            <div class="right">
+                <p id="month">
+                    January
+                </p id="year">
+                <p>2020</p>
+            </div>
+        </div>
+        <!-- //////////////////////////////////////////// -->
+        <div class="code">
+            <p>Enter your text or URL</p>
+            <input type="text" placeholder="Text or URL" id="qrText">
+
+            <div class="imgBox" id="imgBox">
+                <img src="" id="qrImg">
+            </div>
+
+            <button onclick="generateQR()">Generate QR Code
+            </button>
+        </div>
+    </div>
+
+    <!-- /////////////////////////////////////////////////////////// -->
+    <div class="popUp-container">
+        <button type="submit" class="btn" onclick="openPopup()">Submit</button>
+        <div class="popup" id="popup">
+            <img src="./tick2.png" alt="">
+            <h2>Thank You!</h2>
+            <p>Your details as been successfully submitted.</p>
+            <button type="button" onclick="closePop()">OK</button>
+        </div>
+    </div>
+    <!-- ////////////////////////////////////////////// -->
+   <div class="input-box">
+    <input type="text" placeholder=" Password" id="password">
+    <img src="./close.png" id="eyeicon">
+   </div>
+   <!-- ////////////////////////////////////////////// -->
+   <div class="myClock">
+    <div id="clock" class="this-clock"> </div>
+   </div>
+
+<!-- /////////////////////////////////////////////////////// -->
+
+    <script> 
+    const date=document.getElementById("date");
+    const day=document.getElementById("day");
+    const month=document.getElementById("month");
+    const year=document.getElementById("year");
+
+    const today= new Date();
+
+    const weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const Months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]    
+
+    date.innerHTML=today.getDate();
+    day.innerHTML=weekDays[today.getDay()];
+    month.innerHTML=Months[today.getMonth()];
+    year.innerHTML=today.getFullYear();
+
+   
+     
+        </script>
+       
+        <script src="index.js"></script>
+        <!-- <script src="style2.js"></script> -->
+</body>
+</html>
